@@ -52,7 +52,7 @@ describe("auth-router.js", () => {
     // test 1- returns 400 because route is restriced without credentials
 
     describe("POST /", () => {
-        it("should login", () => {
+        it("should give 400 error", () => {
 
             const user = { username: "Jane", password: 123 }
 
@@ -60,7 +60,7 @@ describe("auth-router.js", () => {
                 .post("/api/auth/login")
                 .send(user)
                 .then(res => {
-                    // jest assertion
+
                     expect(res.status).toBe(400);
                 });
         });
